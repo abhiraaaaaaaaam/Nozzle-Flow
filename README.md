@@ -1,4 +1,4 @@
-# **Subsonic Compressible Flow through a Converging-Diverging Nozzle**
+# **Quasi 1D Compressible Flow through a Converging-Diverging Nozzle**
 
 This project simulates the subsonic compressible flow through a converging-diverging (CD) nozzle using MacCormack’s scheme, a widely used explicit finite difference method. The simulation aims to analyze the flow variables (density, pressure, temperature, and velocity) within the nozzle and study their behavior as the flow accelerates from subsonic to sonic conditions.
 
