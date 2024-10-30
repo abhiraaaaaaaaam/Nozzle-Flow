@@ -18,14 +18,40 @@ This project models compressible flow through a CD nozzle, where:
 
 ## **Files in this Repository**
 
-- **`Subsonic Flow_V2.ipynb`**: Jupyter notebook containing the code implementation for the simulation.
-- **`Project_3.pdf`**: Documentation outlining the requirements, equations, and expected graphs.
-- **`image.png`**: Reference image of the expected Mach number and pressure profiles for validation.
+- **`Subsonic Flow_V2.py`**: Python file containing the code implementation for the subsonic flow simulation.
+- **`Subsonic- Supersonic.py`**: Python file containing the code implementation for the subsonic-supersonic flow simulation.
 - **`README.md`**: Project overview and instructions.
 
 ## **Installation and Setup**
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/yourusername/Nozzle-Flow.git
+   cd Nozzle-Flow
+
+2. **Install dependencies: Ensure that Python and Jupyter Notebook are installed. Use pip to install required libraries.**:
+   ```bash
+   pip install numpy matplotlib
+
+## **Usage**
+1. Open the file Subsonic Flow_V2.py or Subsonic- Supersonic.py file.
+2. Run the file
+3. The code will output plots for pressure, density, temperature, and Mach number along the nozzle length.
+
+## **Explanation of Key Components**
+1. **MacCormack Scheme**
+The MacCormack scheme is a two-step predictor-corrector method used for solving hyperbolic partial differential equations:
+
+**Predictor Step**: Forward differencing in space.
+**Corrector Step**: Backward differencing in space.
+
+2. **Nozzle Area Variation**
+The nozzle area is specified as: 
+𝐴(𝑥)=1+2.2(𝑥−1.5)2A(x)=1+2.2(x−1.5)2
+This shape causes the flow to accelerate in the converging section and decelerate in the diverging section.
+
+3. **Boundary Conditions**
+The simulation implements specific boundary conditions for velocity, density, and pressure at the inlet and outlet. These are set up to match the isentropic solutions for subsonic flow through the nozzle.
+
+4. **Initial Conditions**
+The initial state assumes uniform conditions across the nozzle. The values are adjusted in the first few steps to start the acceleration process.
